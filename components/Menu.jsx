@@ -1,4 +1,4 @@
-function Menu({ title, subtitle, items, actions }) {
+function Menu({ title, subtitle, items, children }) {
   return (
     <div className="menu">
       <div className="head">
@@ -15,7 +15,7 @@ function Menu({ title, subtitle, items, actions }) {
             key={item.id}
             role="button"
             className="menu-item"
-            onClick={item.onClick}
+            onClick={() => item.onClick(item)}
           >
             <div id="item-label">{item.name}</div>
           </div>
@@ -24,7 +24,7 @@ function Menu({ title, subtitle, items, actions }) {
 
       <div className="topline"></div>
 
-      <div className="actions">{actions}</div>
+      <div className="actions">{children}</div>
     </div>
   );
 }

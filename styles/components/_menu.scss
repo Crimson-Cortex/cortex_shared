@@ -19,6 +19,10 @@
   gap: 20px;
 }
 
+.menu-items, .actions {
+  padding: 0 36px;
+}
+
 .topline {
   position: relative;
   width: 95%;
@@ -59,22 +63,22 @@
   height: 45%;
   overflow-y: auto;
 
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 8px;
     border-left: 4px solid #272733;
   }
 
-  &::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: #272733;
     border-left: 4px solid #272733;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: #1a242d;
     border-left: 4px solid #272733;
   }
 
-  &::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background: #1a242d;
     border-left: 4px solid #272733;
   }
