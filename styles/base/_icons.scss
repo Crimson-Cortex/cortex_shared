@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "symbols";
+  src: url("/src/shared/styles/base/fonts/symbols/symbol.eot?14065584");
+  src: url("/src/shared/styles/base/fonts/symbols/symbol.eot?14065584#iefix")
+      format("embedded-opentype"),
+    url("/src/shared/styles/base/fonts/symbols/symbol.woff2?14065584")
+      format("woff2"),
+    url("/src/shared/styles/base/fonts/symbols/symbol.woff?14065584")
+      format("woff"),
+    url("/src/shared/styles/base/fonts/symbols/symbol.ttf?14065584")
+      format("truetype"),
+    url("/src/shared/styles/base/fonts/symbols/symbol.svg?14065584#symbol")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="pb-icon__"]:before,
+[class*=" pb-icon__"]:before {
+  font-family: "symbols", serif;
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+.pb-icon__align-left:before {
+  content: "\e800";
+}
+
+.pb-icon__align-center:before {
+  content: "\e801";
+}
+
+.pb-icon__align-right:before {
+  content: "\e802";
+}
+
+.pb-icon__left-open:before {
+  content: "\e808";
+}
+
+.pb-icon__right-open:before {
+  content: "\e809";
+}
+
+.pb-icon__cancel:before {
+  content: "\e810";
+}
+
+.pb-icon__header:before {
+  content: "\f1dc";
+}
+
+.pb-icon__paragraph:before {
+  content: "\f1dd";
+}
+
+.pb-icon__trash:before {
+  content: "\f1f8";
+}
+
+.pb-icon__plus:before {
+  content: "\e803";
+}
