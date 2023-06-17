@@ -1,6 +1,6 @@
-export default class CortexAudio {
+export default class Audio {
   /**
-   * @type {CortexAudio}
+   * @type {Audio}
    * @private
    */
   static _internal_player = null
@@ -9,7 +9,7 @@ export default class CortexAudio {
    * @type {string}
    * @private
    */
-  static _internal_sfx_filepath = '@/assets/sfx'
+  static _internal_sfx_filepath = '@/shared/assets/sfx'
 
   /**
    * @type {number}
@@ -58,7 +58,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxBack(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_back.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_back.mp3', volume, true)
   }
 
   /**
@@ -70,7 +70,7 @@ export default class CortexAudio {
       volume = 0.5
     }
 
-    return CortexAudio._playSfx('rdr2_sfx_next.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_next.mp3', volume, true)
   }
 
   /**
@@ -82,7 +82,7 @@ export default class CortexAudio {
       volume = 0.25
     }
 
-    return CortexAudio._playSfx('rdr2_sfx_up-down.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_up-down.mp3', volume, true)
   }
 
   /**
@@ -90,7 +90,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxShowMenu(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_show_menu.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_show_menu.mp3', volume, true)
   }
 
   /**
@@ -98,7 +98,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxIndexOpen(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_index_open.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_index_open.mp3', volume, true)
   }
 
   /**
@@ -106,7 +106,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxIndexClose(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_index_close.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_index_close.mp3', volume, true)
   }
 
   /**
@@ -114,7 +114,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxHideMenu1(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_hide_menu_01.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_hide_menu_01.mp3', volume, true)
   }
 
   /**
@@ -122,7 +122,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxHideMenu2(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_hide_menu_02.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_hide_menu_02.mp3', volume, true)
   }
 
   /**
@@ -130,7 +130,7 @@ export default class CortexAudio {
    * @return {Promise<void>}
    */
   static playSfxHideMenu3(volume) {
-    return CortexAudio._playSfx('rdr2_sfx_hide_menu_03.mp3', volume, true)
+    return Audio._playSfx('rdr2_sfx_hide_menu_03.mp3', volume, true)
   }
 
   /**
@@ -141,17 +141,17 @@ export default class CortexAudio {
    * @private
    */
   static _playSfx(filename, volume = 0.5, standalone = false) {
-    if (CortexAudio._internal_player === null) {
-      CortexAudio._internal_player = new CortexAudio(CortexAudio._internal_sfx_filepath)
+    if (Audio._internal_player === null) {
+      Audio._internal_player = new Audio(Audio._internal_sfx_filepath)
     }
 
-    CortexAudio._internal_player.setVolume(volume)
-    return CortexAudio._internal_player.playAudio(filename, standalone)
+    Audio._internal_player.setVolume(volume)
+    return Audio._internal_player.playAudio(filename, standalone)
   }
 
   /**
    * @param {string} audio_path
-   * @return {CortexAudio}
+   * @return {Audio}
    */
   setAudioPath(audio_path) {
     this._audio_path = audio_path
@@ -160,7 +160,7 @@ export default class CortexAudio {
 
   /**
    * @param {number} volume
-   * @return {CortexAudio}
+   * @return {Audio}
    */
   setVolume(volume) {
     if (this._volume !== volume) {
@@ -235,7 +235,7 @@ export default class CortexAudio {
 
     this._audio = new Audio(`${this._audio_path}${filename}`)
 
-    this._audio.volume = this._volume * CortexAudio._master_volume_in_percent
+    this._audio.volume = this._volume * Audio._master_volume_in_percent
     this._audio.loop = loop
 
     if (this.hasPlaybackRate()) {
@@ -334,10 +334,10 @@ export default class CortexAudio {
    * @param {number} volume_in_percent
    */
   static setMasterVolumeInPercent(volume_in_percent) {
-    CortexAudio._master_volume_in_percent = volume_in_percent
+    Audio._master_volume_in_percent = volume_in_percent
   }
 
   static resetMasterVolumeInPercent() {
-    CortexAudio._master_volume_in_percent = 1
+    Audio._master_volume_in_percent = 1
   }
 }

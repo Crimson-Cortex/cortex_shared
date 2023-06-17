@@ -1,5 +1,7 @@
 import classnames from "classnames";
 
+import Audio from "@/shared/utils/Audio";
+
 function Button({
   children,
   onClick,
@@ -23,7 +25,7 @@ function Button({
 
   function handleOnClick() {
     if (disabled) {
-      return;
+      return Audio.playSfxNext();
     }
 
     onClick();
@@ -31,12 +33,8 @@ function Button({
 
   function handleOnMouseEnter() {
     if (disabled) {
-      return;
+      return Audio.playSfxUpDown();
     }
-
-    // if (glow) {
-    //   this.$emit('update:glow', true);
-    // }
   }
 
   return (
