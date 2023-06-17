@@ -1,0 +1,151 @@
+.menu {
+  position: absolute;
+
+  width: 26%;
+  height: 80%;
+  color: #fff;
+  padding: 8px;
+  background-image: url("/src/shared/assets/img/inkroller_1a.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  left: 40px;
+  top: 40px;
+
+  gap: 20px;
+}
+
+.topline {
+  position: relative;
+  width: 95%;
+  height: 0.4%;
+  background-image: url("/src/shared/assets/img/divider_line.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.head {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+  height: 10%;
+
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  background-image: url("/src/shared/assets/img/menu_header_1a.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90% 100%;
+
+  margin-top: 10px;
+}
+
+.subtext {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.menu .menu-items {
+  height: 45%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-left: 4px solid #272733;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #272733;
+    border-left: 4px solid #272733;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #1a242d;
+    border-left: 4px solid #272733;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #1a242d;
+    border-left: 4px solid #272733;
+  }
+}
+
+.menu .menu-items .menu-item {
+  width: 92%;
+  height: 12.4%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('/src/shared/assets/img/selection_box_bg_1d.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  &:hover {
+    background-image: url('/src/shared/assets/img/selsected.png'),
+      url('/src/shared/assets/img/selection_box_bg_1d.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}
+
+.description {
+  position: relative;
+  font-size: 19px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 22%;
+  width: 80%;
+}
+
+.create-button {
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  bottom: 1%;
+  width: 80%;
+}
+
+.head > span {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.head > span::before,
+.head > span::before {
+  right: 105%;
+  margin-right: 15px;
+}
+
+.head > span::after {
+  left: 105%;
+  margin-left: 15px;
+}
+
+#item-label {
+  width: fit-content;
+  float: left;
+}

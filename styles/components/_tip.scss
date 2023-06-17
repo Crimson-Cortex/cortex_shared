@@ -1,70 +1,9 @@
-<script setup>
-import { ref, defineProps, watch } from 'vue'
-
-const ANIM_IN_OUT_DURATION_IN_MS = 500
-
-const tip = ref()
-
-const props = defineProps({
-  position: {
-    type: String,
-    default: 'tip--bc',
-    validator(value) {
-      return [
-        'tip--tl',
-        'tip--tc',
-        'tip--tr',
-        'tip--cl',
-        'tip--cc',
-        'tip--cr',
-        'tip--bl',
-        'tip--bc',
-        'tip--br'
-      ].includes(value)
-    }
-  },
-  duration: {
-    type: Number,
-    default: 4000
-  }
-})
-
-const open = ref(false)
-
-watch(open, (value) => {
-  if (value) {
-    window.setTimeout(() => {
-      const el = tip.value
-
-      el.classList.add('nss-tip--out')
-
-      window.setTimeout(() => {
-        el.remove()
-      }, ANIM_IN_OUT_DURATION_IN_MS)
-    }, props.duration + ANIM_IN_OUT_DURATION_IN_MS)
-  }
-})
-</script>
-
-<template>
-  <Teleport to="body">
-    <div ref="tip" class="tip" :class="{ [position]: true }" v-if="open">
-      <slot></slot>
-    </div>
-  </Teleport>
-</template>
-
-<style lang="scss">
-:root {
-  --anim-duration: 500ms;
-}
-
 .tip {
   --translateXCenter: -50%;
   --translateYCenter: -50%;
   --margin: var(--25rpx);
   position: absolute;
-  background: transparent url(@/assets/img/tip.png) no-repeat;
+  background: transparent url("/src/shared/assets/img/tip.png") no-repeat;
   background-size: 100% 100%;
   max-width: calc(var(--1rpx) * 512);
   box-sizing: border-box;
@@ -118,8 +57,10 @@ watch(open, (value) => {
   &--cc {
     left: 50%;
     top: 50%;
-    transform: translateX(var(--translateXCenter)) translateY(var(--translateYCenter));
-    -webkit-transform: translateX(var(--translateXCenter)) translateY(var(--translateYCenter));
+    transform: translateX(var(--translateXCenter))
+      translateY(var(--translateYCenter));
+    -webkit-transform: translateX(var(--translateXCenter))
+      translateY(var(--translateYCenter));
   }
 
   &--cr {
@@ -182,4 +123,3 @@ watch(open, (value) => {
     opacity: 1;
   }
 }
-</style>

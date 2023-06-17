@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'rdr';
-  src: url(fonts/chineserocks.ttf) format('truetype');
+  src: url('src/shared/styles/base/fonts/chineserocks.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'rdr_crock';
-  src: url(fonts/crock.ttf) format('truetype');
+  src: url('src/shared/styles/base/fonts/crock.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'hapna-slab'; // nss-tip-rdr
-  src: url(fonts/HapnaSlabSerif-DemiBold.ttf) format('truetype');
+  src: url('src/shared/styles/base/fonts/HapnaSlabSerif-DemiBold.ttf') format('truetype');
 }

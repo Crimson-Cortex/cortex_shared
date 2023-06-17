@@ -1,4 +1,4 @@
-class CortexAudio {
+export default class CortexAudio {
   /**
    * @type {CortexAudio}
    * @private
@@ -341,5 +341,3 @@ class CortexAudio {
     CortexAudio._master_volume_in_percent = 1
   }
 }
-
-export { CortexAudio }

@@ -1,19 +1,21 @@
-$rpx: calc(1rem / 16);
-$rpx-5: calc($rpx * 5);
-$rpx-7: calc($rpx * 7);
-$rpx-10: calc($rpx * 10);
-$rpx-15: calc($rpx * 15);
-$rpx-20: calc($rpx * 20);
-$rpx-25: calc($rpx * 25);
-$rpx-30: calc($rpx * 30);
-$rpx-35: calc($rpx * 35);
-$rpx-40: calc($rpx * 40);
-$rpx-50: calc($rpx * 50);
-$rpx-75: calc($rpx * 75);
-$rpx-100: calc($rpx * 100);
-$scrollbar-radius: var($rpx-5);
-$scrollbar-width: var($rpx-10);
+:root {
+  --1rpx: calc(1rem / 16);
+  --5rpx: calc(var(--1rpx) * 5);
+  --7rpx: calc(var(--1rpx) * 7);
+  --10rpx: calc(var(--1rpx) * 10);
+  --15rpx: calc(var(--1rpx) * 15);
+  --20rpx: calc(var(--1rpx) * 20);
+  --25rpx: calc(var(--1rpx) * 25);
+  --30rpx: calc(var(--1rpx) * 30);
+  --35rpx: calc(var(--1rpx) * 35);
+  --40rpx: calc(var(--1rpx) * 40);
+  --50rpx: calc(var(--1rpx) * 50);
+  --75rpx: calc(var(--1rpx) * 75);
+  --100rpx: calc(var(--1rpx) * 100);
+  --scrollbar-radius: var(--5rpx);
+  --scrollbar-width: var(--10rpx);
 
-$font-family: 'rdr', sans-serif;
+  --font-family: "rdr", sans-serif;
 
-$animation-duration: 500ms;
+  --animation-duration: 500ms;
+}
